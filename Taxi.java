@@ -128,7 +128,7 @@ class CallTaxi
       
    
 
-  void booking()
+  void booking()throws CallTaxiException
   {
     Scanner sc = new Scanner(System.in);
    
@@ -203,7 +203,14 @@ ch = sc.nextInt();
 switch(ch)
 {
 case 1 :
+try
+{
 ct.booking();
+}
+catch(CallTaxiException e)
+{
+  System.out.println(e);
+}
 break;
 case 2:
 ct.display();
